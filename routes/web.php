@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\TipController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('home'));
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Rotas do CRUD
+//Route::get('/home', [App\Http\Controllers\TipController::class, 'index'])->name('user.home');
+
+Route::resource('tip', 'TipController')->middleware('auth');
