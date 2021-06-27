@@ -17,29 +17,54 @@
                 <option class="form-control" value="Caminhão">Caminhão</option>
                 <option class="form-control" value="Moto">Moto</option>
             </select>
+            @if($errors->has('tipo'))
+                <small class="alert-danger">
+                    {{ $errors->first('tipo') }}
+                </small>
+                @endif 
         </div>
 
         <div class="form-group">
             <label for="">Marca</label>
             <input type="text" name="marca" value="{{ $tip->marca }}" id="" class="form-control" placeholder=""
                 aria-describedby="helpId" required minlength="3" maxlength="10">
+                @if($errors->has('marca'))
+                <small class="alert-danger">
+                    {{ $errors->first('marca') }}
+                </small>
+                @endif 
         </div>
 
         <div class="form-group">
             <label for="">Modelo</label>
             <input type="text" name="modelo" required minlength="3" maxlength="20" value="{{ $tip->modelo }}" class="form-control" placeholder=""
                 aria-describedby="helpId">
+                @if($errors->has('modelo'))
+                <small class="alert-danger">
+                    {{ $errors->first('modelo') }}
+                </small>
+                @endif 
         </div>
 
         <div class="form-group">
             <label for="">Versão</label>
             <input type="text" name="versao"  maxlength="10" value="{{ $tip->versao }}" id="" class="form-control" placeholder=""
                 aria-describedby="helpId">
+                @if($errors->has('versao'))
+                <small class="alert-danger">
+                    {{ $errors->first('versao') }}
+                </small>
+                @endif 
         </div>
 
         <div class="form-group">
             <label for="">Descrição</label>
             <input type="text"  name="descricao" maxlength="200" value='{{ $tip->descricao }}'' id="" class="form-control" placeholder="" aria-describedby="helpId">
+            @if($errors->has('descricao'))
+                <small class="alert-danger">
+                    {{ $errors->first('descricao') }}
+                </small>
+                @endif 
           </div>
           <br>
 

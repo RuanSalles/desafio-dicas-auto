@@ -16,7 +16,7 @@ class TipController extends Controller
      */
     public function index()
     {
-        $tips = Tip::where('user_id', '=', Auth::user()->id)->latest()->paginate(8);
+        $tips = Tip::where('user_id', '=', Auth::user()->id)->latest()->paginate(10);
         //Auth::user()->tips;
         return view('dicas.home', compact('tips'));
     }
@@ -47,7 +47,7 @@ class TipController extends Controller
             'descricao'       => ['max:200'],
             
         ]);
-        
+
         /**
          * @var User;
          */
@@ -89,7 +89,15 @@ class TipController extends Controller
      */
     public function update(Request $request, Tip $tip)
     {
-        $tip->update($request->all());
+        $data = $request->validate([
+            'tipo'       => ['required', 'min:3', 'max:10'],
+            'marca'      => ['required', 'min:3', 'max:10'],
+            'modelo'     => ['required', 'min:3', 'max:20'],
+            'versao'    => ['max:10'],
+            'descricao'       => ['max:200'],
+            
+        ]);
+        $tip->update($request->$data);
         return redirect(route('tip.index'));
     }
 
