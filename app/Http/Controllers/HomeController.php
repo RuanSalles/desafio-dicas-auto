@@ -26,11 +26,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tips = DB::table('tips')->orderByRaw('id DESC')->limit(5)->get();
+        
+        $tips = Tip::latest()->when($request->filtro, function ($query) use ($request) {
+            $query->where($request->filtro, 'LIKE', '%'.$request->valor.'%');
+        })->paginate(5);
         return view('home', ['tips' => $tips]);
+
      }
 
-    
 }

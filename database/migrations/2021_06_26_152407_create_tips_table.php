@@ -18,8 +18,8 @@ class CreateTipsTable extends Migration
             $table->string('tipo');
             $table->string('marca');
             $table->string('modelo');
-            $table->string('versao');
-            $table->string('descricao');
+            $table->string('versao')->nullable();
+            $table->string('descricao')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\TipController;
+use App\Models\Tip;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,9 +23,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Rota da HOME (sem login)
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Rotas do CRUD
-//Route::get('/home', [App\Http\Controllers\TipController::class, 'index'])->name('user.home');
 
+
+//Rotas do CRUD com Resource
 Route::resource('tip', 'TipController')->middleware('auth');

@@ -16,9 +16,9 @@ class TipController extends Controller
      */
     public function index()
     {
-        $tips = Auth::user()->tips;
+        $tips = Tip::where('user_id', '=', Auth::user()->id)->latest()->paginate(8);
+        //Auth::user()->tips;
         return view('dicas.home', compact('tips'));
-
     }
 
     /**
@@ -39,13 +39,24 @@ class TipController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'tipo'       => ['required', 'min:3', 'max:10'],
+            'marca'      => ['required', 'min:3', 'max:10'],
+            'modelo'     => ['required', 'min:3', 'max:20'],
+            'versao'    => ['max:10'],
+            'descricao'       => ['max:200'],
+            
+        ]);
+        
         /**
          * @var User;
          */
         $user = Auth::user();
-        $user->tips()->create($request->all());
+        $user->tips()->create($data);
 
         return redirect(route('tip.index'));
+
+       
     }
 
     /**
@@ -56,7 +67,6 @@ class TipController extends Controller
      */
     public function show(Tip $tip)
     {
-        
     }
 
     /**
@@ -67,7 +77,7 @@ class TipController extends Controller
      */
     public function edit(Tip $tip)
     {
-        //
+        return view('dicas.edit', compact('tip'));
     }
 
     /**
@@ -79,7 +89,8 @@ class TipController extends Controller
      */
     public function update(Request $request, Tip $tip)
     {
-        //
+        $tip->update($request->all());
+        return redirect(route('tip.index'));
     }
 
     /**
@@ -90,6 +101,8 @@ class TipController extends Controller
      */
     public function destroy(Tip $tip)
     {
-        //
+        $tip->delete();
+
+        return redirect(route('tip.index'));
     }
 }
