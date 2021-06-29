@@ -26,9 +26,9 @@ class TipFactory extends Factory
     public function definition()
     {
         $user = User::first();
-        $modelos = ['Gol', 'Palio', 'Uno', 'Celta', 'Strada'];
+        $modelos = ['Gol', 'Palio', 'Uno', 'Celta', 'Strada', 'HB20', 'Amarok', 'S10', 'TrialBlaizer', 'ClasseA', 'Camaro', 'Opala', 'Fusca', 'Chevet', 'Kadet'];
         $tipo = ['Carro', 'Moto', 'Caminhão'];
-        $marca = ['Fiat', 'Chevrolet', 'Hyundai', 'Volkswagem', 'Skoda'];
+        $marca = ['Fiat', 'Chevrolet', 'Hyundai', 'Volkswagem', 'Skoda', 'Lifan', 'Jac', 'Renault', 'Landhouver', 'Mercedes', 'Ferrari', 'Honda'];
         $versao = ['Hatch', 'Sedan', 'Pick-up', 'Scania'];
         $descricao = ['Ótimo carro', 'Veículo sustentável', 'Me arrependi', 'Compraria novamente', 'Nunca mais quero ver', 'Bastante econômico'];
         return [
