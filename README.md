@@ -184,13 +184,12 @@ Obs: a sessão criada permanece ativa, caso não tenha deslogado, então basta c
 ## Contato
 
 Para qualquer dúvida em relação ao projeto, fica as redes de contato.
+<br>
+<br>
 
 <a  href="https://twitter.com/salescode_"  target="blank"><img  align="center"  src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg"  alt="ruansalles"  height="30"  width="30" /></a>
-
 <a  href="https://www.linkedin.com/in/ruan-sales-7b4051171/"  target="blank"><img  align="center"  src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg"  alt="ruansalles"  height="30"  width="30" /></a>
-
 <a  href="https://www.instagram.com/osalescodes/"  target="blank"><img  align="center"  src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg"  alt="ruansalles"  height="30"  width="30" /></a>
-
 <a  href="https://www.instagram.com/osalescodes/"  target="blank"><img  align="center"  src="https://img.icons8.com/ios-filled/50/000000/twitch.png"  alt="ruansalles"  height="30"  width="30" /></a>
 
 </p>
