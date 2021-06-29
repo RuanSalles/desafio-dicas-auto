@@ -166,7 +166,7 @@ Levantado o projeto, deverá executar o seguinte comando para rodar as migraçõ
 
 A partir daí você deverá criar um cadastro acessando o endereço local no navegador, através do menu Cadastrar:
 
-<pre>localhot</pre>
+<pre>localhost</pre>
 
 Realizado o cadastro e redirecionado para a página de usuário, poderá popular o banco de dados, com o seguinte comando:
 
