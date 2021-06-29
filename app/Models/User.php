@@ -41,8 +41,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tips() {
+    public function tips()
+    {
         return $this->hasMany(Tip::class);
     }
 }
-

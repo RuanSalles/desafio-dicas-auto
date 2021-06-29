@@ -28,12 +28,10 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $tips = Tip::latest()->when($request->filtro, function ($query) use ($request) {
-            $query->where($request->filtro, 'LIKE', '%'.$request->valor.'%');
+            $query->where($request->filtro, 'LIKE', '%' . $request->valor . '%');
         })->paginate(5);
         return view('home', ['tips' => $tips]);
-
-     }
-
+    }
 }

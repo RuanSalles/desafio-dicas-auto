@@ -45,7 +45,7 @@ class TipController extends Controller
             'modelo'     => ['required', 'min:3', 'max:20'],
             'versao'    => ['max:10'],
             'descricao'       => ['max:200'],
-            
+
         ]);
 
         /**
@@ -55,8 +55,6 @@ class TipController extends Controller
         $user->tips()->create($data);
 
         return redirect(route('tip.index'));
-
-       
     }
 
     /**
@@ -95,7 +93,7 @@ class TipController extends Controller
             'modelo'     => ['required', 'min:3', 'max:20'],
             'versao'    => ['max:10'],
             'descricao'       => ['max:200'],
-            
+
         ]);
         $tip->update($request->$data);
         return redirect(route('tip.index'));

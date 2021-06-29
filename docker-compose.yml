@@ -11,12 +11,29 @@ services:
             - "80:80"
         volumes:
             - ./:/var/www/html
+        networks: 
+            - desafio
+        depends_on: 
+            - db
 
     db:
         image: mysql:8.0
         restart: always
         ports:
             - "3306:3306"
+        networks: 
+            - desafio
         environment:
-            MYSQL_DATABASE: 'meuprojeto-db'
-            MYSQL_ROOT_PASSWORD: 'senha'
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_USER: '${DB_USERNAME}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
+            retries: 3
+            timeout: 5s
+    
+networks: 
+    desafio:
+        driver: bridge

@@ -6,7 +6,7 @@
             <section class="justify-content-center">
                 <div class="justify-content-center">
                     <h2 class="mb-0">
-                        Bem vindo implementando layout
+                        Bem vindo
                     </h2>
                     <br>
                     <h3>Últimas dicas</h3>

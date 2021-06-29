@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    
+
 </head>
 
 <body>
@@ -54,7 +54,7 @@
     </li>
 
     <div class="container-fluid p-0">
-        
+
         <section class="resume-section" id="about">
             <div class="resume-section-content">
                 @yield('content')

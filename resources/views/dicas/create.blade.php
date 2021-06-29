@@ -23,8 +23,8 @@
 
         <div class="form-group">
             <label for="">Marca</label>
-            <input type="text" name="marca" class="form-control" placeholder="Marca" value="{{ old('marca') }}"
-                aria-describedby="helpId" required minlength="3" maxlength="10">
+            <input type="text" name="marca" class="form-control" value="{{ old('marca') }}" aria-describedby="helpId"
+                required minlength="3" maxlength="10">
             @if ($errors->has('marca'))
                 <small class="alert-danger">
                     {{ $errors->first('marca') }}
