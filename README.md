@@ -178,7 +178,7 @@ Para verificar a função de filtragem poderá deslogar e ser redirecionado ou a
 
 <pre>localhost/home</pre>
 
-Obs: a sessão criada permanece ativa, caso não tenha deslogado, então basta cliar em entrar novamente e será redirecionado automaticamente.
+Obs: a sessão criada permanece ativa, caso não tenha deslogado, então basta clicar em entrar novamente e será redirecionado automaticamente.
 <br>
 
 ## Contato
