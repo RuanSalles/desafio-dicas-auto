@@ -58,6 +58,7 @@ DB_PASSWORD=senha (senha do seu ambiente local)
 OBS: caso não tenha um banco de dados criado que receba o projeto, poderá ser criado facilmente através do MySQL Workbench ou terminal acessado no seu ambiente local.
 
 * Instalando com SQLite
+
 Caso não queira utilizar localmente o SGDB do MySQL e possuindo do banco SQLite, poderá utilizar a seguinte configuração.
 
 <pre>
